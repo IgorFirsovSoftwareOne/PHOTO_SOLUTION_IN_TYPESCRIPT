@@ -1,0 +1,8 @@
+<div class="wrapper">
+    <cdk-virtual-scroll-viewport itemSize="50" class="viewport">
+        <div *cdkVirtualFor="let photo of photos">
+            <img src="{{photo.url}}">
+            <p>{{photo.title}}</p>
+        </div>
+    </cdk-virtual-scroll-viewport>
+</div>

@@ -1,0 +1,18 @@
+.wrapper {
+    margin-left: 1em;
+    margin-right: 1em;
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: repeat(3, 1fr);
+    grid-row-gap: 1em;
+    grid-column-gap: 1em;
+}
+
+cdk-virtual-scroll-viewport{
+    height: 100vh;
+    width: 80vh;
+    margin: 0 auto;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}
