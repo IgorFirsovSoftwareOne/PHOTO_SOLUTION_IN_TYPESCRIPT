@@ -10,8 +10,11 @@ import { Observable } from 'rxjs';
 export class DataService {
   constructor(public http: HttpClient) {
   }
-  getPhotos(url: string): Observable<IPhotos[]> {
-    return this.http.get<IPhotos[]>(url);
+
+  readonly pageSize = 50;
+  getPhotos(pageCounter, size): Observable<IPhotos[]> {
+    pageCounter++;
+    return this.http.get<IPhotos[]>('https://jsonplaceholder.typicode.com/photos');
   }
 }
 

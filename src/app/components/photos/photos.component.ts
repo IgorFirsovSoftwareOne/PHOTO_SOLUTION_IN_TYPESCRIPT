@@ -1,6 +1,8 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, HostListener, ViewChild } from '@angular/core';
 import { DataService } from '../../services/data.service';
-import { MatCardModule } from '@angular/material';
+import { MatPaginator } from '@angular/material';
+
+
 
 @Component({
   selector: 'app-photos',
@@ -8,14 +10,13 @@ import { MatCardModule } from '@angular/material';
   styleUrls: ['./photos.component.css']
 })
 export class PhotosComponent implements OnInit {
+  photos: IPhotos[];
+  pageCounter = 0;
 
+  constructor(private dataService: DataService) {}
 
-  constructor(private dataService: DataService) {
-  }
-
-  photos: any;
   ngOnInit() {
-    this.dataService.getPhotos('http://jsonplaceholder.typicode.com/photos')
-    .subscribe( photos => this.photos = photos);
+  this.dataService.getPhotos(0, 50).subscribe(photos => this.photos = photos);
+
   }
 }
