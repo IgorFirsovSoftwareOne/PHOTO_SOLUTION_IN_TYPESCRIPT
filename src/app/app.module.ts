@@ -7,7 +7,6 @@ import { MatPaginatorModule } from '@angular/material';
 import { AppComponent } from './app.component';
 import { PhotosComponent } from './components/photos/photos.component';
 
-
 import { DataService } from './services/data.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 

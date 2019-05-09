@@ -1,7 +1,9 @@
 <div class="wrapper">
-    <div *ngFor="let photo of photos">
+    <div *ngFor="let photo of slicedPhotos">
         <img src="{{photo.url}}">
         <p>{{photo.title}}</p>
     </div>
-    <button (click)="getPhotos()"></button>
 </div>
+<div class="buttons">
+    <button (click)="loadPhotos()">More..</button>
+</div> 
