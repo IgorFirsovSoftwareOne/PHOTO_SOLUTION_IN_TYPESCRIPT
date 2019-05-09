@@ -7,10 +7,12 @@ import { DataService } from '../../services/data.service';
   styleUrls: ['./photos.component.css']
 })
 export class PhotosComponent implements OnInit {
+
   photos: IPhotos[];
   slicedPhotos: IPhotos[];
   pageCounter = 0;
   pageSize = 51;
+
   constructor(private dataService: DataService) {}
 
   ngOnInit() {
@@ -28,6 +30,5 @@ export class PhotosComponent implements OnInit {
     if (this.pageSize >= 250 ) {
       this.pageCounter += 51;
     }
-
   }
 }
